@@ -145,24 +145,24 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <h2 id="第一章-准备"><a href="#第一章-准备" class="headerlink" title="第一章 准备"></a>第一章 准备</h2><p>内容</p>
-<h4 id="step1-我们需要安装以下软件："><a href="#step1-我们需要安装以下软件：" class="headerlink" title="step1 我们需要安装以下软件："></a>step1 我们需要安装以下软件：<br></h4><p>1.node.js<br>2.git<br><br></p>
-<h4 id="step2-开通一个github账号"><a href="#step2-开通一个github账号" class="headerlink" title="step2 开通一个github账号"></a>step2 开通一个github账号</h4><br>
-#### step3 新建空文件夹，对其Git Bush
-<br>
-#### step4 指令
-1.
+<h4 id="step1-我们需要安装以下软件："><a href="#step1-我们需要安装以下软件：" class="headerlink" title="step1 我们需要安装以下软件："></a>step1 我们需要安装以下软件：<br></h4><ol>
+<li>node.js</li>
+<li>git<br>
+#### step2 开通一个github账号
+
+</li>
+</ol>
+<h4 id="step3-新建空文件夹，对其Git-Bush"><a href="#step3-新建空文件夹，对其Git-Bush" class="headerlink" title="step3 新建空文件夹，对其Git Bush"></a>step3 新建空文件夹，对其Git Bush</h4><h4 id="step4-指令"><a href="#step4-指令" class="headerlink" title="step4 指令"></a>step4 指令</h4><p>1.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g cnpm --registry&#x3D;http:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-2.
+<p>2.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-3.
+<p>3.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir blog（创建了一个blog文件夹）</span><br><span class="line">$ cd blog&#x2F;（进入这个文件夹）</span><br><span class="line">$ pwd（确认一下路径）</span><br><span class="line">$ hexo init</span><br><span class="line">$ hexo s（显示info good bye,可以开始blogging啦）</span><br><span class="line">$ hexo n &quot;我的第一篇博客文章&quot;</span><br><span class="line">$ cd source&#x2F;_posts&#x2F;（进入存放博文的文件夹）</span><br><span class="line">$ vim 我的第一篇博客文章.md（用git自带的vim进行编辑）</span><br><span class="line">$ cd ..&#x2F;..（后退两层）</span><br></pre></td></tr></table></figure>
-4.
+<p>4.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
-#### step5 打开github网站，creat a new reposiotry
-复制reposiotry的名称
+<h4 id="step5-打开github网站，creat-a-new-reposiotry"><a href="#step5-打开github网站，creat-a-new-reposiotry" class="headerlink" title="step5 打开github网站，creat a new reposiotry"></a>step5 打开github网站，creat a new reposiotry</h4><p>复制reposiotry的名称</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ vim _config.yml(打开文本，找到deployment,进行修改)</span><br><span class="line"># Deployment</span><br><span class="line">## Docs: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;one-command-deployment</span><br><span class="line">deploy:</span><br><span class="line">  type: &#39;git&#39;</span><br><span class="line">  repo: https:&#x2F;&#x2F;github.com&#x2F;pkupzl&#x2F;pkupzl.github.io.git（复制你的网址） </span><br><span class="line">  branch: master（自己添加的一行）</span><br></pre></td></tr></table></figure>
-#### step6 进行部署
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+<h4 id="step6-进行部署"><a href="#step6-进行部署" class="headerlink" title="step6 进行部署"></a>step6 进行部署</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
 <br>
 
 
