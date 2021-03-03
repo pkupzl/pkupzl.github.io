@@ -2611,7 +2611,7 @@ ul.breadcrumb li:last-child {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #c27326;
+  background: #06cbff;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2635,7 +2635,7 @@ body {
   background: url("/images/background.jpg");
   background-repeat: repeat;
   background-attachment: fixed;
-  background-position: 50% 50%;
+  background-position: center;
   color: var(--text-color);
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 1em;
