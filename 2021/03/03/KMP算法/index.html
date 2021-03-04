@@ -23,15 +23,15 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","version":"8.2.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
-<meta name="description" content="前言在阅读串的KMP算法的时候，我竟然没搞清楚下标到底是从0开始还是从1开始 在此写一个从0开始的笔记  第一章 next数组next数组的定义next[i]&#x3D;\begin{cases}-1,\quad i&#x3D;0max{k}, \quad s.t$”t_1t_2…t_{k-1}”&#x3D;”t_{j-k}…t_{j-1}”\end{cases} 参考文献《数据结构与算法》">
+<meta name="description" content="前言在阅读串的KMP算法的时候，我竟然没搞清楚下标到底是从0开始还是从1开始 在此写一个从0开始的笔记  第一章 next数组next数组的定义$$ next[i]&#x3D;\begin{cases}-1,\quad i&#x3D;0max{k}, \quad s.t“t1t2…tk-1“&#x3D;”tj-k…tj-1“\end{cases} $$ next数组的求法int getnext() &amp;#123;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="KMP算法">
 <meta property="og:url" content="http://example.com/2021/03/03/KMP%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="Zhenliang Pans personal website">
-<meta property="og:description" content="前言在阅读串的KMP算法的时候，我竟然没搞清楚下标到底是从0开始还是从1开始 在此写一个从0开始的笔记  第一章 next数组next数组的定义next[i]&#x3D;\begin{cases}-1,\quad i&#x3D;0max{k}, \quad s.t$”t_1t_2…t_{k-1}”&#x3D;”t_{j-k}…t_{j-1}”\end{cases} 参考文献《数据结构与算法》">
+<meta property="og:description" content="前言在阅读串的KMP算法的时候，我竟然没搞清楚下标到底是从0开始还是从1开始 在此写一个从0开始的笔记  第一章 next数组next数组的定义$$ next[i]&#x3D;\begin{cases}-1,\quad i&#x3D;0max{k}, \quad s.t“t1t2…tk-1“&#x3D;”tj-k…tj-1“\end{cases} $$ next数组的求法int getnext() &amp;#123;">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-03-03T14:33:18.000Z">
-<meta property="article:modified_time" content="2021-03-04T02:49:40.443Z">
+<meta property="article:modified_time" content="2021-03-04T06:36:23.460Z">
 <meta property="article:author" content="pkupzl">
 <meta property="article:tag" content="-算法">
 <meta name="twitter:card" content="summary">
@@ -161,7 +161,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-next%E6%95%B0%E7%BB%84"><span class="nav-number">2.</span> <span class="nav-text">第一章 next数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#next%E6%95%B0%E7%BB%84%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">2.1.</span> <span class="nav-text">next数组的定义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="nav-number">3.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-next%E6%95%B0%E7%BB%84"><span class="nav-number">2.</span> <span class="nav-text">第一章 next数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#next%E6%95%B0%E7%BB%84%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">2.1.</span> <span class="nav-text">next数组的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#next%E6%95%B0%E7%BB%84%E7%9A%84%E6%B1%82%E6%B3%95"><span class="nav-number">2.2.</span> <span class="nav-text">next数组的求法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%B9%E9%85%8D"><span class="nav-number">3.</span> <span class="nav-text">匹配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="nav-number">4.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -258,7 +258,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-03-04 10:49:40" itemprop="dateModified" datetime="2021-03-04T10:49:40+08:00">2021-03-04</time>
+        <time title="Modified: 2021-03-04 14:36:23" itemprop="dateModified" datetime="2021-03-04T14:36:23+08:00">2021-03-04</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -280,10 +280,72 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <span id="more"></span> 
+         <span id="more"></span> 
 
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在阅读串的KMP算法的时候，我竟然没搞清楚下标到底是从0开始还是从1开始<br> <br><br>在此写一个从0开始的笔记 </p>
-<h2 id="第一章-next数组"><a href="#第一章-next数组" class="headerlink" title="第一章 next数组"></a>第一章 next数组</h2><h3 id="next数组的定义"><a href="#next数组的定义" class="headerlink" title="next数组的定义"></a>next数组的定义</h3><p>next[i]=\begin{cases}<br>-1,\quad i=0<br>max{k}, \quad <em>s.t</em>$”t_1t_2…t_{k-1}”=”t_{j-k}…t_{j-1}”<br>\end{cases}</p>
+<h2 id="第一章-next数组"><a href="#第一章-next数组" class="headerlink" title="第一章 next数组"></a>第一章 next数组</h2><h3 id="next数组的定义"><a href="#next数组的定义" class="headerlink" title="next数组的定义"></a>next数组的定义</h3><p>$$ next[i]=\begin{cases}<br>-1,\quad i=0<br>max{k}, \quad <em>s.t</em>“t<sub>1</sub>t<sub>2</sub>…t<sub>k-1</sub>“=”t<sub>j-k</sub>…t<sub>j-1</sub>“<br>\end{cases} $$</p>
+<h3 id="next数组的求法"><a href="#next数组的求法" class="headerlink" title="next数组的求法"></a>next数组的求法</h3><pre><code>int getnext()
+&#123;
+    int i,j;
+    i=0; next[i]=-1;
+    j=-1;
+    while(i&lt;l2)
+    &#123;
+        if(j==-1||s2[i]==s2[j])
+        &#123;
+            i++;j++;
+            next[i]=j;    
+        &#125;
+        else
+        &#123;    
+        j=next[j];
+        &#125;    
+    &#125;
+&#125;
+</code></pre>
+<p>下面我们从递推的角度思考这个算法<br><br><br>假设next[i]=j<br><br> </p>
+<ol>
+<li>t<sub>i</sub>=t<sub>j</sub><br><br> 那么j$\rightnarrow$j+1<br>i$\rightnarrow$i+1<br>next[i]=j<br></li>
+<li>t<sub>i</sub>!=t<sub>j</sub><br><br> 那么令j=next[j]       (迭代)<br><br> 若next[i+1]&gt;j+1 则t<sub>i</sub>=t<sub>j</sub>，矛盾<br><br> 所以next[i+1]&lt;=j+1</li>
+</ol>
+<hr>
+<p>所以这样就保证了答案（next[i+1]）永远在j指针+1的左边，而在迭代过程中j保持递减（到-1结束）故我们总是能找到</p>
+<h2 id="匹配"><a href="#匹配" class="headerlink" title="匹配"></a>匹配</h2><p>匹配部分理解起来就简单很多,上代码：</p>
+<pre><code>  int kmp(char s[100],int pos,char t[100])
+ &#123; 
+     int l1,l2,i,j;
+     i=pos;
+      j=0;
+     l1=strlen(s);
+     l2=strlen(t);
+     while(i&lt;l1&amp;&amp;j&lt;l2)
+    &#123;
+        if(j==-1||s[i]==t[j])
+        &#123;
+            i++;j++;
+        &#125;
+    else
+        &#123;
+        if(j==0)
+    &#123;
+                j=next[j];
+        &#125;
+        else
+        j=next[j-1];
+    &#125;
+&#125;    
+
+    if(j&gt;=l2)
+        &#123;
+        return(i-l2);
+    &#125;
+    else
+    &#123;
+    return 0;
+    &#125;
+&#125;
+</code></pre>
+<p>这就是</p>
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>《数据结构与算法》</p>
 
     </div>
