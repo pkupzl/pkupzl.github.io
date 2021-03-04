@@ -253,7 +253,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-03-04 14:36:23" itemprop="dateModified" datetime="2021-03-04T14:36:23+08:00">2021-03-04</time>
+        <time title="Modified: 2021-03-04 16:12:39" itemprop="dateModified" datetime="2021-03-04T16:12:39+08:00">2021-03-04</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -275,74 +275,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-           <span id="more"></span> 
-
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在阅读串的KMP算法的时候，我竟然没搞清楚下标到底是从0开始还是从1开始<br> <br><br>在此写一个从0开始的笔记 </p>
-<h2 id="第一章-next数组"><a href="#第一章-next数组" class="headerlink" title="第一章 next数组"></a>第一章 next数组</h2><h3 id="next数组的定义"><a href="#next数组的定义" class="headerlink" title="next数组的定义"></a>next数组的定义</h3><p>$$ next[i]=\begin{cases}<br>-1,\quad i=0<br>max{k}, \quad <em>s.t</em>“t<sub>1</sub>t<sub>2</sub>…t<sub>k-1</sub>“=”t<sub>j-k</sub>…t<sub>j-1</sub>“<br>\end{cases} $$</p>
-<h3 id="next数组的求法"><a href="#next数组的求法" class="headerlink" title="next数组的求法"></a>next数组的求法</h3><pre><code>int getnext()
-&#123;
-    int i,j;
-    i=0; next[i]=-1;
-    j=-1;
-    while(i&lt;l2)
-    &#123;
-        if(j==-1||s2[i]==s2[j])
-        &#123;
-            i++;j++;
-            next[i]=j;    
-        &#125;
-        else
-        &#123;    
-        j=next[j];
-        &#125;    
-    &#125;
-&#125;
-</code></pre>
-<p>下面我们从递推的角度思考这个算法<br><br><br>假设next[i]=j<br><br> </p>
-<ol>
-<li>t<sub>i</sub>=t<sub>j</sub><br><br> 那么j$\rightnarrow$j+1<br>i$\rightnarrow$i+1<br>next[i]=j<br></li>
-<li>t<sub>i</sub>!=t<sub>j</sub><br><br> 那么令j=next[j]       (迭代)<br><br> 若next[i+1]&gt;j+1 则t<sub>i</sub>=t<sub>j</sub>，矛盾<br><br> 所以next[i+1]&lt;=j+1</li>
-</ol>
-<hr>
-<p>所以这样就保证了答案（next[i+1]）永远在j指针+1的左边，而在迭代过程中j保持递减（到-1结束）故我们总是能找到</p>
-<h2 id="匹配"><a href="#匹配" class="headerlink" title="匹配"></a>匹配</h2><p>匹配部分理解起来就简单很多,上代码：</p>
-<pre><code>  int kmp(char s[100],int pos,char t[100])
- &#123; 
-     int l1,l2,i,j;
-     i=pos;
-      j=0;
-     l1=strlen(s);
-     l2=strlen(t);
-     while(i&lt;l1&amp;&amp;j&lt;l2)
-    &#123;
-        if(j==-1||s[i]==t[j])
-        &#123;
-            i++;j++;
-        &#125;
-    else
-        &#123;
-        if(j==0)
-    &#123;
-                j=next[j];
-        &#125;
-        else
-        j=next[j-1];
-    &#125;
-&#125;    
-
-    if(j&gt;=l2)
-        &#123;
-        return(i-l2);
-    &#125;
-    else
-    &#123;
-    return 0;
-    &#125;
-&#125;
-</code></pre>
-<p>这就是</p>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>《数据结构与算法》</p>
-
+          <p><img src="https://i.loli.net/2021/03/04/uAUlt7yBwEgr5bG.png"> </p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/03/03/KMP%E7%AE%97%E6%B3%95/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
