@@ -30,9 +30,8 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.loli.net/2021/03/04/uAUlt7yBwEgr5bG.png">
 <meta property="og:image" content="https://i.loli.net/2021/03/04/uAUlt7yBwEgr5bG.png">
-<meta property="og:image" content="https://i.loli.net/2021/03/04/luz2OGk34WHZImw.png">
 <meta property="article:published_time" content="2021-03-03T14:33:18.000Z">
-<meta property="article:modified_time" content="2021-03-04T11:28:27.623Z">
+<meta property="article:modified_time" content="2021-03-04T11:38:43.800Z">
 <meta property="article:author" content="pkupzl">
 <meta property="article:tag" content="-算法">
 <meta name="twitter:card" content="summary">
@@ -163,7 +162,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-next%E6%95%B0%E7%BB%84"><span class="nav-number">2.</span> <span class="nav-text">第一章 next数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#next%E6%95%B0%E7%BB%84%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">2.1.</span> <span class="nav-text">next数组的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#next%E6%95%B0%E7%BB%84%E7%9A%84%E6%B1%82%E6%B3%95"><span class="nav-number">2.2.</span> <span class="nav-text">next数组的求法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%B9%E9%85%8D"><span class="nav-number">3.</span> <span class="nav-text">匹配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#next%E6%95%B0%E7%BB%84%E4%BF%AE%E6%AD%A3"><span class="nav-number">4.</span> <span class="nav-text">next数组修正</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E6%96%87%E5%86%99%E4%BD%9C%E8%A7%A3%E5%86%B3%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">5.</span> <span class="nav-text">本文写作解决的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="nav-number">6.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-next%E6%95%B0%E7%BB%84"><span class="nav-number">2.</span> <span class="nav-text">第一章 next数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#next%E6%95%B0%E7%BB%84%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">2.1.</span> <span class="nav-text">next数组的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#next%E6%95%B0%E7%BB%84%E7%9A%84%E6%B1%82%E6%B3%95"><span class="nav-number">2.2.</span> <span class="nav-text">next数组的求法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#next%E6%95%B0%E7%BB%84%E4%BF%AE%E6%AD%A3"><span class="nav-number">3.</span> <span class="nav-text">next数组修正</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E6%96%87%E5%86%99%E4%BD%9C%E8%A7%A3%E5%86%B3%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">4.</span> <span class="nav-text">本文写作解决的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="nav-number">5.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -260,7 +259,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-03-04 19:28:27" itemprop="dateModified" datetime="2021-03-04T19:28:27+08:00">2021-03-04</time>
+        <time title="Modified: 2021-03-04 19:38:43" itemprop="dateModified" datetime="2021-03-04T19:38:43+08:00">2021-03-04</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -305,54 +304,64 @@
 &#125;
 </code></pre><p><div></div></p>
 <p><font color="#00ffff" size="10"></font></p>
-<p><script type="math/tex">\ rightarrow</script> &lt;/font&gt;<br>&lt;/div&gt;<br>下面我们从递推的角度思考这个算法<br><br><br>假设next[i]=j<br><br> </p>
-<ol>
-<li><p>t<sub>i</sub>=t<sub>j</sub><br><br> 那么 </p>
-<p><img src="https://i.loli.net/2021/03/04/luz2OGk34WHZImw.png" alt="迭代"></p>
-</li>
-<li><p>t<sub>i</sub>!=t<sub>j</sub><br><br> 那么令j=next[j]       (迭代)<br><br> 若next[i+1]&gt;j+1 则t<sub>i</sub>=t<sub>j</sub>，矛盾<br><br> 所以next[i+1]&lt;=j+1</p>
-</li>
-</ol>
-<hr>
-<p><div></div></p>
-<p><font color="bright" size="5"><br>所以这样就保证了答案（next[i+1]）永远在j指针+1的左边，而在迭代过程中j保持递减（到-1结束）故我们总是能找到 </font><br>&lt;/div&gt;</p>
-<h2 id="匹配"><a href="#匹配" class="headerlink" title="匹配"></a>匹配</h2><p>匹配部分理解起来就简单很多,上代码：</p>
-<pre><code>  int kmp(char s[100],int pos,char t[100])
- &#123; 
-     int l1,l2,i,j;
-     i=pos;
-      j=0;
-     l1=strlen(s);
-     l2=strlen(t);
-     while(i&lt;l1&amp;&amp;j&lt;l2)
-    &#123;
-        if(j==-1||s[i]==t[j])
-        &#123;
-            i++;j++;
-        &#125;
-    else
-        &#123;
-        if(j==0)
-    &#123;
-                j=next[j];
-        &#125;
-        else
-        j=next[j-1];
-    &#125;
-&#125;    
+<script type="math/tex; mode=display">\ rightarrow $$ </font>
+</div> 
+下面我们从递推的角度思考这个算法
+<br> 
+假设next[i]=j
+<br> 
+ 1. t<sub>i</sub>=t<sub>j</sub>
+ <br> 那么 
 
-    if(j&gt;=l2)
-        &#123;
-        return(i-l2);
-    &#125;
-    else
-    &#123;
-    return 0;
-    &#125;
-&#125;
-</code></pre><p>这就是匹配的部分 </p>
-<h2 id="next数组修正"><a href="#next数组修正" class="headerlink" title="next数组修正"></a>next数组修正</h2><p><div></div></p>
-<h2 id="本文写作解决的问题"><a href="#本文写作解决的问题" class="headerlink" title="本文写作解决的问题"></a>本文写作解决的问题</h2><ol>
+ ![迭代](https://i.loli.net/2021/03/04/luz2OGk34WHZImw.png)
+
+ 2. t<sub>i</sub>!=t<sub>j</sub> 
+ <br> 那么令j=next[j]       (迭代)
+ <br> 若next[i+1]>j+1 则t<sub>i</sub>=t<sub>j</sub>，矛盾
+ <br> 所以next[i+1]<=j+1
+ ---
+<div>
+<font color=bright size=5>
+所以这样就保证了答案（next[i+1]）永远在j指针+1的左边，而在迭代过程中j保持递减（到-1结束）故我们总是能找到 </font>
+</div>
+## 匹配
+匹配部分理解起来就简单很多,上代码：
+
+      int kmp(char s[100],int pos,char t[100])
+     { 
+         int l1,l2,i,j;
+         i=pos;
+          j=0;
+         l1=strlen(s);
+         l2=strlen(t);
+         while(i<l1&&j<l2)
+        {
+            if(j==-1||s[i]==t[j])
+            {
+                i++;j++;
+            }
+        else
+            {
+            if(j==0)
+        {
+                    j=next[j];
+            }
+            else
+            j=next[j-1];
+        }
+    }    
+
+        if(j>=l2)
+            {
+            return(i-l2);
+        }
+        else
+        {
+        return 0;
+        }
+    }
+这就是匹配的部分
+$$T(n) = \Theta(n)</script><h2 id="next数组修正"><a href="#next数组修正" class="headerlink" title="next数组修正"></a>next数组修正</h2><h2 id="本文写作解决的问题"><a href="#本文写作解决的问题" class="headerlink" title="本文写作解决的问题"></a>本文写作解决的问题</h2><ol>
 <li>在markdown上打出箭头符号、下标（结果还是显示不出来orz）</li>
 <li>按f6预览效果</li>
 <li>在word上打简单公式然后直接放截图 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2>《数据结构与算法》 <br><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/tanmx219/article/details/83040062">打出箭头</a></li>
